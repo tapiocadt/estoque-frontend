@@ -10,6 +10,7 @@ export default function RequisitionList() {
     const [toApprove, setToApprove] = useState([]);
     const [toDeliver, setToDeliver] = useState([]);
     const [delivered, setDelivered] = useState([]);
+    const [cancelled, setCancelled] = useState([]);
 
     useEffect(() => {
         const allRequisitions = async () => {
@@ -19,6 +20,7 @@ export default function RequisitionList() {
                 setToApprove(allReq.filter((req) => req.status === 'Pendente'));
                 setToDeliver(allReq.filter((req) => req.status === 'Aprovado'));
                 setDelivered(allReq.filter((req) => req.status === 'Entregue'));
+                setCancelled(allReq.filter((req) => req.status === 'Cancelado'));
             } finally {
                 setLoading(false);
             }
@@ -55,6 +57,15 @@ export default function RequisitionList() {
             <h2> Retirados: </h2>
             <div className={styles.list}>
                 {delivered?.map((req) => (
+                    <div key={req.id}>
+                        <RequisitionCard requisition={req} />
+                    </div>
+                ))}
+            </div>
+
+            <h2> Cancelado: </h2>
+            <div className={styles.list}>
+                {cancelled?.map((req) => (
                     <div key={req.id}>
                         <RequisitionCard requisition={req} />
                     </div>

@@ -7,39 +7,55 @@ import Battery0BarIcon from '@mui/icons-material/Battery0Bar';
 
 export default function ItemCard({ item }) {
 
-    const [level, setLevel] = useState(BatteryFullIcon);
+    const [level, setLevel] = useState(3);
 
     useEffect(() => {
         const halfLevel = item.totalQuantity / 2;
 
         if (item.freeQuantity === 0) {
-            // warning = black
-            console.log("BLACK");
-            setLevel(Battery0BarIcon);
+            // console.log("BLACK");
+            setLevel(0);
             return;
         }
 
         if (item.freeQuantity <= item.minQuantity) {
-            // warning = red
-            console.log("RED");
-            setLevel(Battery1BarIcon);
+            // console.log("RED");
+            setLevel(1);
             return;
         }
 
         if (item.freeQuantity <= halfLevel) {
-            // warning = yellow
-            console.log("YELLOW");
-            setLevel(Battery4BarIcon);
+            // console.log("YELLOW");
+            setLevel(2);
             return;
         }
 
-    }, [])
+    }, []);
 
     return (
         <div className={styles.card}>
-            <h2>{item.name}</h2>
+
+            {level === 0 && (
+                <Battery0BarIcon />
+            )}
+
+            {level === 1 && (
+                <Battery1BarIcon />
+            )}
+
+            {level === 2 && (
+                <Battery4BarIcon />
+            )}
+
+            {level === 3 && (
+                <BatteryFullIcon />
+            )}
+
+            <h2> {item.name} </h2>
+
             <p> Quantidade </p>
-            <p> Disponível / Total </p>
+            {/* <p> Disponível / Total </p> */}
+
             <p> {item.freeQuantity} / {item.totalQuantity} </p>
             {/* <p>Quantidade Mínima: {item.minQuantity}</p> */}
         </div>

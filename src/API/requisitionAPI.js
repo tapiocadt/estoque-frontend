@@ -7,7 +7,7 @@ export const getRequisitions = async () => {
     // console.log(response.data);
     return response.data;
   } catch (error) {
-    console.log("erro no envio");
+    console.log("erro no recebimento");
     return [];
   }
 }
@@ -34,10 +34,21 @@ export const postRequisition = async (requisition) => {
 
 export const approveRequisition = async (id) => {
   try {
-    return await axios.put(`${APIlink}/requisition/${id}/approve`);
+    const response = await axios.put(`${APIlink}/requisition/${id}/approve`);
+    return response.data;
     // console.log(`${APIlink}/${id}/approve`);
   } catch (error) {
-    return "erro em aprovar";
+    return error.response.data;
+  }
+}
+
+export const disapproveRequisition = async (id) => {
+  try {
+    const response = await axios.put(`${APIlink}/requisition/${id}/disapprove`);
+    return response.data;
+    // console.log(`${APIlink}/${id}/disapprove`);
+  } catch (error) {
+    return error.response.data;
   }
 }
 
@@ -47,6 +58,15 @@ export const deliverRequisition = async (id) => {
     // console.log(`${APIlink}/${id}/deliver`);
   } catch (error) {
     return "erro em entregar";
+  }
+}
+
+export const cancelRequisition = async (id) => {
+  try {
+    return await axios.put(`${APIlink}/requisition/${id}/cancel`);
+    // console.log(`${APIlink}/${id}/cancel`);
+  } catch (error) {
+    return "erro em cancelar";
   }
 }
 

@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import styles from './CardStyle.module.css'
 import { Fab } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
-import { approveRequisition, deliverRequisition } from '../../../../API/requisitionAPI';
+import { approveRequisition, cancelRequisition, deliverRequisition, disapproveRequisition } from '../../../../API/requisitionAPI';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import CloseIcon from '@mui/icons-material/Close';
+import BlockIcon from '@mui/icons-material/Block';
 
 export default function RequisitionCard({ requisition }) {
 
@@ -31,7 +32,7 @@ export default function RequisitionCard({ requisition }) {
   }
 
   const requisitionDenial = async (id) => {
-    const retorno = await approveRequisition(id);
+    const retorno = await disapproveRequisition(id);
     console.log(retorno);
   }
 
@@ -39,6 +40,12 @@ export default function RequisitionCard({ requisition }) {
     const retorno = await deliverRequisition(id);
     console.log(retorno);
   }
+
+  const requisitionCancel = async (id) => {
+    const retorno = await cancelRequisition(id);
+    console.log(retorno);
+  }
+
 
   return (
     <div className={styles.card}>
@@ -52,7 +59,7 @@ export default function RequisitionCard({ requisition }) {
           </div>
 
           <div className={styles.denial}>
-            <Fab color="error" onClick={() => requisitionApproval(requisition.id)}>
+            <Fab color="error" onClick={() => requisitionDenial(requisition.id)}>
               <CloseIcon />
             </Fab>
           </div>
@@ -60,11 +67,19 @@ export default function RequisitionCard({ requisition }) {
       )}
 
       {requisition.status === 'Aprovado' && (
-        <div className={styles.approval}>
-          <Fab color="success" onClick={() => requisitionDeliver(requisition.id)}>
-            <DoneAllIcon />
-          </Fab>
-        </div>
+        <>
+          <div className={styles.approval}>
+            <Fab color="success" onClick={() => requisitionDeliver(requisition.id)}>
+              <DoneAllIcon />
+            </Fab>
+          </div>
+
+          <div className={styles.denial}>
+            <Fab color="error" onClick={() => requisitionCancel(requisition.id)}>
+              <BlockIcon />
+            </Fab>
+          </div>
+        </>
       )}
 
       <h2> {requisition.status} </h2>
