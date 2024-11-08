@@ -6,15 +6,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ItemList from './pages/BackOffice/Item/ItemList.jsx';
 import RequisitionBoard from './pages/BackOffice/Requisition/Board/RequisitionBoard.jsx';
 import RequisitionList from './pages/BackOffice/Requisition/List/RequisitionList.jsx';
-import ReqSheet from './pages/sheets/Requisition/ReqSheet.jsx';
+// import ReqSheet from './pages/sheets/Requisition/ReqSheet.jsx';
 import { AlertProvider } from './Context/AlertContext.jsx';
 import ItemSheet from './pages/Sheets/Item/ItemSheet.jsx';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ReqSheet />
-  },
+  // {
+  //   path: "/",
+  //   element: <ReqSheet />
+  // },
   {
     path: "/view",
     element: <RequisitionBoard />
