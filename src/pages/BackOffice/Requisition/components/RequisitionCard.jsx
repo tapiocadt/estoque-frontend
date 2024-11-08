@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react'
-import styles from './CardStyle.module.css'
+import React from 'react'
+import styles from './cardStyle.module.css'
 import { Fab } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 import { approveRequisition, cancelRequisition, deliverRequisition, disapproveRequisition } from '../../../../API/requisitionAPI';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import CloseIcon from '@mui/icons-material/Close';
 import BlockIcon from '@mui/icons-material/Block';
+import { useAlert } from '../../../../Context/AlertContext';
 
-export default function RequisitionCard({ requisition }) {
+export default function RequisitionCard({ requisition, setRefresh }) {
 
-  // useEffect(() => {
-  //   requisition.requisitionItens.map((item) => {
-  //     console.log(item);
-  //     console.log(item.name);
-  //   })
-  // }, [])
+  const { showAlert } = useAlert();
 
   const convertDate = (date) => {
     return new Date(date).toLocaleString("pt-BR", {
@@ -27,25 +23,48 @@ export default function RequisitionCard({ requisition }) {
   }
 
   const requisitionApproval = async (id) => {
-    const retorno = await approveRequisition(id);
-    console.log(retorno);
+    try {
+      const retorno = await approveRequisition(id);
+      // console.log(retorno);
+      setRefresh((refresh) => refresh + 1);
+      showAlert(retorno, "success");
+    } catch (error) {
+      showAlert(error, "error");
+    }
   }
 
   const requisitionDenial = async (id) => {
-    const retorno = await disapproveRequisition(id);
-    console.log(retorno);
+    try {
+      const retorno = await disapproveRequisition(id);
+      // console.log(retorno);
+      setRefresh((refresh) => refresh + 1);
+      showAlert(retorno, "success");
+    } catch (error) {
+      showAlert(error, "error");
+    }
   }
 
   const requisitionDeliver = async (id) => {
-    const retorno = await deliverRequisition(id);
-    console.log(retorno);
+    try {
+      const retorno = await deliverRequisition(id);
+      // console.log(retorno);
+      setRefresh((refresh) => refresh + 1);
+      showAlert(retorno, "success");
+    } catch (error) {
+      showAlert(error, "error");
+    }
   }
 
   const requisitionCancel = async (id) => {
-    const retorno = await cancelRequisition(id);
-    console.log(retorno);
+    try {
+      const retorno = await cancelRequisition(id);
+      // console.log(retorno);
+      setRefresh((refresh) => refresh + 1);
+      showAlert(retorno, "success");
+    } catch (error) {
+      showAlert(error, "error");
+    }
   }
-
 
   return (
     <div className={styles.card}>

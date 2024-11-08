@@ -23,51 +23,54 @@ export const getRequisition = (id) => {
 }
 
 export const postRequisition = async (requisition) => {
-  try {
-    await axios.post(`${APIlink}/requisition`, requisition);
+  // try {
+    const response = await axios.post(`${APIlink}/requisition`, requisition);
+    return response.data;
     // console.log(requisition);
-    return "requisição enviada";
-  } catch (error) {
-    return "erro no envio";
-  }
+  //   return "requisição enviada";
+  // } catch (error) {
+  //   return "erro no envio";
+  // }
 }
 
 export const approveRequisition = async (id) => {
-  try {
+  // try {
     const response = await axios.put(`${APIlink}/requisition/${id}/approve`);
     return response.data;
     // console.log(`${APIlink}/${id}/approve`);
-  } catch (error) {
-    return error.response.data;
-  }
+  // } catch (error) {
+    // return error.response.data;
+  // }
 }
 
 export const disapproveRequisition = async (id) => {
-  try {
+  // try {
     const response = await axios.put(`${APIlink}/requisition/${id}/disapprove`);
     return response.data;
     // console.log(`${APIlink}/${id}/disapprove`);
-  } catch (error) {
-    return error.response.data;
-  }
+  // } catch (error) {
+  //   return error.response.data;
+  // }
 }
 
 export const deliverRequisition = async (id) => {
-  try {
-    return await axios.put(`${APIlink}/requisition/${id}/deliver`);
+  // try {
+    const response = await axios.put(`${APIlink}/requisition/${id}/deliver`);
+    return response.data;
     // console.log(`${APIlink}/${id}/deliver`);
-  } catch (error) {
-    return "erro em entregar";
-  }
+  // } catch (error) {
+  //   return "erro em entregar";
+  // }
 }
 
 export const cancelRequisition = async (id) => {
-  try {
-    return await axios.put(`${APIlink}/requisition/${id}/cancel`);
+  // try {
+    const response =  await axios.put(`${APIlink}/requisition/${id}/cancel`);
+    return response.data;
     // console.log(`${APIlink}/${id}/cancel`);
-  } catch (error) {
-    return "erro em cancelar";
-  }
+  // } catch (error) {
+  //   return "erro em cancelar";
+  // }
 }
 
 export const updateRequisition = () => {

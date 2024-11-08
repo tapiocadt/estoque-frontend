@@ -1,54 +1,54 @@
 .card {
-     color: black;
-     background-color: white;
-     width: 100%;
-     min-width: 500px;
-     border-radius: 5px;
-     position: relative;
+    color: black;
+    background-color: white;
+    width: 100%;
+    min-width: 350px;
+    border-radius: 5px;
+    position: relative;
 }
 
 .card>h2 {
-     padding-top: 20px;
+    padding-top: 20px;
 }
 
 .grid>div {
-     display: flex;
-     justify-content: center;
-     gap: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
 }
 
 .itensList {
-     display: grid !important;
-     gap: 5px !important;
-     padding-bottom: 15px;
+    display: grid !important;
+    gap: 5px !important;
+    padding-bottom: 15px;
 }
 
 .itensList p {
-     margin: 10px;
+    margin: 10px;
 }
 
 .itensList>div {
-     display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     gap: 10px;
-     min-height: 50px;
-     align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    min-height: 50px;
+    align-items: center;
 }
 
 .item {
-     border: solid 1px lightgray;
-     border-radius: 10px;
-     min-width: 120px;
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    min-width: 120px;
 }
 
 .approval {
-     position: absolute;
-     right: -10px;
-     top: -10px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }
 
 .denial {
-     position: absolute;
-     right: -10px;
-     top: 70px;
+    position: absolute;
+    right: -10px;
+    top: 70px;
 }

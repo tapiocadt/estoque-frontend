@@ -35,21 +35,24 @@ export default function ItemCard({ item }) {
     return (
         <div className={styles.card}>
 
-            {level === 0 && (
-                <Battery0BarIcon />
-            )}
+            {/* icones bateria */}
+            <>
+                {level === 0 && (
+                    <Battery0BarIcon />
+                )}
 
-            {level === 1 && (
-                <Battery1BarIcon />
-            )}
+                {level === 1 && (
+                    <Battery1BarIcon />
+                )}
 
-            {level === 2 && (
-                <Battery4BarIcon />
-            )}
+                {level === 2 && (
+                    <Battery4BarIcon />
+                )}
 
-            {level === 3 && (
-                <BatteryFullIcon />
-            )}
+                {level === 3 && (
+                    <BatteryFullIcon />
+                )}
+            </>
 
             <h2> {item.name} </h2>
 
