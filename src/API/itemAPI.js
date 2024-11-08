@@ -22,8 +22,8 @@ export const getItem = async (id) => {
 }
 
 export const postItem = async (item) => {
-  try {
-    await axios.post(`${APIlink}/item`, {
+  // try {
+  const response = await axios.post(`${APIlink}/item`, {
       "image": item.image,
       "name": item.name,
       "totalQuantity": item.totalQuantity,
@@ -31,10 +31,10 @@ export const postItem = async (item) => {
       "minQuantity": item.minQuantity
     })
 
-    return "requisição enviada"
-  } catch (error) {
-    return "erro no envio"
-  } 
+    return response;
+  // } catch (error) {
+  //   return "erro no envio"
+  // } 
 }
 
 export const updateItem = (item) => {

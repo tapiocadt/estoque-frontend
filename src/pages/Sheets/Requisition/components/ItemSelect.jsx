@@ -55,6 +55,30 @@ export default function ItemSelect({ items, setItems }) {
                             onChange={(e) => handleItemChange(index, e)}
                             required
                             fullWidth
+                            sx={{
+                                // Cor da borda quando o campo não está focado
+                                "& .MuiOutlinedInput-root": {
+                                    "& fieldset": {
+                                        borderColor: "white", // Cor padrão da borda
+                                    },
+                                    "&:hover fieldset": {
+                                        borderColor: "white", // Cor da borda ao passar o mouse
+                                    },
+                                    "&.Mui-focused fieldset": {
+                                        borderColor: "white", // Cor da borda ao focar no campo
+                                    },
+                                },
+                                // Cor do texto e da label
+                                "& .MuiInputBase-input": {
+                                    color: "white", // Cor do texto dentro do campo
+                                },
+                                "& .MuiInputLabel-root": {
+                                    color: "white", // Cor da label padrão
+                                },
+                                "& .MuiInputLabel-root.Mui-focused": {
+                                    color: "white", // Cor da label ao focar no campo
+                                },
+                            }}
                         >
                             {availableItems?.map((option) => (
                                 <MenuItem key={option.id} value={option.name}>
@@ -66,13 +90,37 @@ export default function ItemSelect({ items, setItems }) {
 
                     <Grid2 size={3}>
                         <TextField
-                            label="Quantity"
+                            label="Quantidade"
                             name="quantity"
                             type="number"
                             value={item.quantity}
                             onChange={(e) => handleItemChange(index, e)}
                             required
                             fullWidth
+                            sx={{
+                                // Cor da borda quando o campo não está focado
+                                "& .MuiOutlinedInput-root": {
+                                    "& fieldset": {
+                                        borderColor: "white", // Cor padrão da borda
+                                    },
+                                    "&:hover fieldset": {
+                                        borderColor: "white", // Cor da borda ao passar o mouse
+                                    },
+                                    "&.Mui-focused fieldset": {
+                                        borderColor: "white", // Cor da borda ao focar no campo
+                                    },
+                                },
+                                // Cor do texto e da label
+                                "& .MuiInputBase-input": {
+                                    color: "white", // Cor do texto dentro do campo
+                                },
+                                "& .MuiInputLabel-root": {
+                                    color: "white", // Cor da label padrão
+                                },
+                                "& .MuiInputLabel-root.Mui-focused": {
+                                    color: "white", // Cor da label ao focar no campo
+                                },
+                            }}
                         />
                     </Grid2>
 

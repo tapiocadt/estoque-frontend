@@ -3,3 +3,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
+
+.addButton {
+    position: absolute !important;
+    right: 20px;
+    bottom: 20px;
+}

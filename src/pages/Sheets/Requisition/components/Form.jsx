@@ -44,11 +44,6 @@ export default function Form() {
 
   return (
     <>
-      {alert && (
-        <Alert variant="filled" severity={severity}>
-          {message}
-        </Alert>
-      )}
       <Box
         component="form"
         sx={{
@@ -67,6 +62,30 @@ export default function Form() {
           onChange={handleRequisitionChange}
           required
           autoComplete='off'
+          sx={{
+            // Cor da borda quando o campo não está focado
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "white", // Cor padrão da borda
+              },
+              "&:hover fieldset": {
+                borderColor: "white", // Cor da borda ao passar o mouse
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "white", // Cor da borda ao focar no campo
+              },
+            },
+            // Cor do texto e da label
+            "& .MuiInputBase-input": {
+              color: "white", // Cor do texto dentro do campo
+            },
+            "& .MuiInputLabel-root": {
+              color: "white", // Cor da label padrão
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "white", // Cor da label ao focar no campo
+            },
+          }}
         />
 
         <TextField
@@ -77,6 +96,30 @@ export default function Form() {
           onChange={handleRequisitionChange}
           required
           autoComplete='off'
+          sx={{
+            // Cor da borda quando o campo não está focado
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "white", // Cor padrão da borda
+              },
+              "&:hover fieldset": {
+                borderColor: "white", // Cor da borda ao passar o mouse
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "white", // Cor da borda ao focar no campo
+              },
+            },
+            // Cor do texto e da label
+            "& .MuiInputBase-input": {
+              color: "white", // Cor do texto dentro do campo
+            },
+            "& .MuiInputLabel-root": {
+              color: "white", // Cor da label padrão
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "white", // Cor da label ao focar no campo
+            },
+          }}
         />
 
         <TextField
@@ -86,6 +129,30 @@ export default function Form() {
           onChange={handleRequisitionChange}
           required
           autoComplete='off'
+          sx={{
+            // Cor da borda quando o campo não está focado
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "white", // Cor padrão da borda
+              },
+              "&:hover fieldset": {
+                borderColor: "white", // Cor da borda ao passar o mouse
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "white", // Cor da borda ao focar no campo
+              },
+            },
+            // Cor do texto e da label
+            "& .MuiInputBase-input": {
+              color: "white", // Cor do texto dentro do campo
+            },
+            "& .MuiInputLabel-root": {
+              color: "white", // Cor da label padrão
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "white", // Cor da label ao focar no campo
+            },
+          }}
         />
 
         <TextField
@@ -95,6 +162,30 @@ export default function Form() {
           onChange={handleRequisitionChange}
           required
           autoComplete='off'
+          sx={{
+            // Cor da borda quando o campo não está focado
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "white", // Cor padrão da borda
+              },
+              "&:hover fieldset": {
+                borderColor: "white", // Cor da borda ao passar o mouse
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "white", // Cor da borda ao focar no campo
+              },
+            },
+            // Cor do texto e da label
+            "& .MuiInputBase-input": {
+              color: "white", // Cor do texto dentro do campo
+            },
+            "& .MuiInputLabel-root": {
+              color: "white", // Cor da label padrão
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "white", // Cor da label ao focar no campo
+            },
+          }}
         />
 
         <TextField
@@ -107,6 +198,30 @@ export default function Form() {
             shrink: true,
           }}
           required
+          sx={{
+            // Cor da borda quando o campo não está focado
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "white", // Cor padrão da borda
+              },
+              "&:hover fieldset": {
+                borderColor: "white", // Cor da borda ao passar o mouse
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "white", // Cor da borda ao focar no campo
+              },
+            },
+            // Cor do texto e da label
+            "& .MuiInputBase-input": {
+              color: "white", // Cor do texto dentro do campo
+            },
+            "& .MuiInputLabel-root": {
+              color: "white", // Cor da label padrão
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "white", // Cor da label ao focar no campo
+            },
+          }}
         />
 
         <h3>Items da requisição</h3>

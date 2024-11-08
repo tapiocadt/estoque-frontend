@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { getItens } from '../../../API/itemAPI';
 import ItemCard from './components/ItemCard';
-import styles from './listStyle.module.css'
+import styles from './listStyle.module.css';
+import { Fab } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import { Link } from 'react-router-dom';
 
 export default function ItemList() {
 
@@ -17,7 +20,6 @@ export default function ItemList() {
                 setLoading(false);
             }
         };
-
         allItens();
     }, []);
 
@@ -32,6 +34,11 @@ export default function ItemList() {
                     <ItemCard item={item} />
                 </div>
             ))}
+            <Link to={"/addItem"}>
+                <Fab className={styles.addButton} color="primary" aria-label="add">
+                    <AddIcon />
+                </Fab>
+            </Link>
         </div>
     )
 }

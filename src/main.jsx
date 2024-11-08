@@ -8,6 +8,7 @@ import RequisitionBoard from './pages/BackOffice/Requisition/Board/RequisitionBo
 import RequisitionList from './pages/BackOffice/Requisition/List/RequisitionList.jsx';
 import ReqSheet from './pages/sheets/Requisition/ReqSheet.jsx';
 import { AlertProvider } from './Context/AlertContext.jsx';
+import ItemSheet from './pages/Sheets/Item/ItemSheet.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,16 @@ const router = createBrowserRouter([
     element: <RequisitionBoard />
   },
   {
+    path: "/list/:listName",
+    element: <RequisitionList />
+  },
+  {
     path: "/item",
     element: <ItemList />
   },
   {
-    path: "/list/:listName",
-    element: <RequisitionList />
+    path: "/addItem",
+    element: <ItemSheet />
   }
 ]);
 
