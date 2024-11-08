@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './components/form';
 
-export default function ReqSheet() {
+export default function ReqsSheet() {
 
   return (
     <Form />

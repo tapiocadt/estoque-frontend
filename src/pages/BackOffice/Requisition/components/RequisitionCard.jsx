@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './cardStyle.module.css'
+import styles from './cardStyles.module.css'
 import { Fab } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 import { approveRequisition, cancelRequisition, deliverRequisition, disapproveRequisition } from '../../../../API/requisitionAPI';
