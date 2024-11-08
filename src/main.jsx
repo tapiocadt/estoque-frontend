@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ItemList from './pages/BackOffice/Item/ItemList.jsx';
 import RequisitionBoard from './pages/BackOffice/Requisition/Board/RequisitionBoard.jsx';
 import RequisitionList from './pages/BackOffice/Requisition/List/RequisitionList.jsx';
-import ReqsSheet from './pages/Heets/Requisition/ReqsSheets.jsx';
+import ReqsSheet from './pages/Heets/Equisition/ReqsSheets.jsx';
 import { AlertProvider } from './Context/AlertContext.jsx';
 import ItemSheet from './pages/Heets/Item/ItemSheet.jsx';
 
