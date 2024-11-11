@@ -14,7 +14,16 @@
 .grid>div {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 15px;
+}
+
+.grid p {
+    margin: 0 !important;
+}
+
+.motive {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .itensList {

@@ -104,15 +104,17 @@ export default function RequisitionCard({ requisition, setRefresh }) {
       <h2> {requisition.status} </h2>
 
       <p> {convertDate(requisition.schedule)} </p>
+      
 
       <div className={styles.grid}>
         <div>
           <p> {requisition.name} </p>
-          <p> {requisition.email} </p>
           <p> {requisition.setor} </p>
         </div>
 
-        <div>
+        <p> {requisition.email} </p>
+
+        <div className={styles.motive}>
           <p> {requisition.motive} </p>
         </div>
 
